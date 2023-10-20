@@ -1,0 +1,23 @@
+{
+  "id": "candelaobscura",
+  "title": "Candela Obscura",
+  "description": "An unofficial conversion of Darrington Press' TTRPG system Candela Obscura, for use in Foundry VTT.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "maximum": "11"
+  },
+  "authors": [
+    {
+      "name": "7thPorter",
+      "url": "https://github.com/7thPorter"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}
