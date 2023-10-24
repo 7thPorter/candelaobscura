@@ -1,0 +1,22 @@
+{
+  "name": "candelaobscura",
+  "version": "1.0.0",
+  "description": "An unofficial conversion of Darrington Press' TTRPG system Candela Obscura, for use in Foundry VTT.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7thPorter/candelaobscura.git"
+  },
+  "author": "7thPorter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/7thPorter/candelaobscura/issues"
+  },
+  "homepage": "https://github.com/7thPorter/candelaobscura#readme",
+  "dependencies": {
+    "less": "^4.2.0"
+  }
+}
