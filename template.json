@@ -1,0 +1,176 @@
+{
+  "Actor": {
+    "types": ["circleMember", "npc", "circle"],
+    "templates": {
+      "personalInformation": {
+        "name": "",
+        "pronouns": ""
+      },
+      "detailedInformation": {
+        "role": "",
+        "specialty": "",
+        "style": "",
+        "catalyst": "",
+        "question": "",
+        "scars": [],
+        "relationships": [],
+        "notes": "",
+        "abilities": [],
+        "illuminationKeys": []
+      },
+      "circle": {
+        "name": "",
+        "chapter": "",
+        "members": [],
+        "lightkeeperName": "",
+        "abilities": [],
+        "items": []
+      },
+      "resources": {
+        "marks": {
+          "body": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          },
+          "brain": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          },
+          "bleed": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          }
+        },
+        "drives": {
+          "nerve": {
+            "min": 0,
+            "value": 0,
+            "max": 9
+          },
+          "cunning": {
+            "min": 0,
+            "value": 0,
+            "max": 9
+          },
+          "intuition": {
+            "min": 0,
+            "value": 0,
+            "max": 9
+          }
+        },
+        "resistances": {
+          "nerve": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          },
+          "cunning": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          },
+          "intuition": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          }
+        },
+        "actions": {
+          "move": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "strike": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "control": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "sway": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "read": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "hide": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "survey": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "focus": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          },
+          "sense": {
+            "min": 0,
+            "value": 0,
+            "max": 3,
+            "gilded": false
+          }
+        },
+        "candelaObscura": {
+          "min": 0,
+          "value": 0,
+          "max": 10
+        },
+        "illumination": {
+          "min": 0,
+          "value": 0,
+          "max": 10
+        }
+      }
+    },
+    "circleMember": {
+      "templates": ["personalInformation", "detailedInformation", "resources"]
+    },
+    "npc": {
+      "templates": ["personalInformation"]
+    },
+    "circle": {
+      "templates": ["circle", "resources"]
+    }
+  },
+  "Item": {
+    "types": ["mundane", "magickal"],
+    "templates": {
+      "purpose": "",
+      "dangerLevel": {
+        "stakes": ["low", "medium", "high"]
+      }
+    },
+    "mundane": {
+      "templates": ["purpose", "dangerLevel"],
+      "isMagickal": false
+    },
+    "magickal": {
+      "templates": ["purpose", "dangerLevel"],
+      "isMagickal": true
+    }
+  }
+}
