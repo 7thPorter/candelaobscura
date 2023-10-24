@@ -13,6 +13,8 @@
       "url": "https://github.com/7thPorter"
     }
   ],
+  "esmodules": ["scripts/candelaobscura-module.mjs"],
+  "styles": ["styles/candelaobscura-styles.css"],
   "languages": [
     {
       "lang": "en",
