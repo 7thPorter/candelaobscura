@@ -1,0 +1,197 @@
+<form class="{{cssClass}} candela-characterSheet" autocomplete="off">
+    <header class="candela-characterSheet__header">
+        <h1 class="candela-characterSheet__logo">Candela<br>Obscura</h1>
+
+        <div>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Name: <input type="text" /></label>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Pronouns: <input type="text" /></label>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Circle: <input type="text" /></label>
+        </div>
+
+        <div>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Style: <input type="text" /></label>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Catalyst: <input type="text" /></label>
+            <label style="display: flex; flex-direction: row; align-items: center; gap: 4px;">Question: <input type="text" /></label>
+        </div>
+    </header>
+
+    <div class="candela-characterSheet__actions">
+        {{#each data as |group|}}
+        <section class="candela-actionGroup">
+            <header class="candela-actionGroup__header">
+                <span class="candela-actionGroup__title candela-title">{{localize group.name}}</span>
+
+                <div class="candela-actionGroup__drives">
+                    <input type="radio" name="drive[{{group.id}}]" value="1" />
+                    <input type="radio" name="drive[{{group.id}}]" value="2" />
+                    <input type="radio" name="drive[{{group.id}}]" value="3" />
+                    <input type="radio" name="drive[{{group.id}}]" value="4" />
+                    <input type="radio" name="drive[{{group.id}}]" value="5" />
+                    <input type="radio" name="drive[{{group.id}}]" value="6" />
+                    <input type="radio" name="drive[{{group.id}}]" value="7" />
+                    <input type="radio" name="drive[{{group.id}}]" value="8" />
+                    <input type="radio" name="drive[{{group.id}}]" value="9" />
+
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="1" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="2" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="3" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="4" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="5" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="6" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="7" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="8" />
+                    <input type="radio" name="maxDrive[{{group.id}}]" value="9" />
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <div class="candela-actionGroup__actions">
+                {{#each group.actions as |action|}}
+                <div class="candela-action">
+                    <input class="candela-action__gilded candela-checkbox--secondary" type="checkbox" name="actionGilded[{{action.id}}]" />
+                    <a data-actionId="{{action.id}}" style="display: inline-block;" class="action-roll candela-action__name candela-subtitle">{{localize action.name}}</a>
+                    <span class="candela-action__description">{{localize action.description}}</span>
+
+                    <div class="candela-action__rating">
+                        <input type="radio" name="actionRating[{{action.id}}]" value="1" class="candela-checkbox--primary"/>
+                        <input type="radio" name="actionRating[{{action.id}}]" value="2" class="candela-checkbox--primary"/>
+                        <input type="radio" name="actionRating[{{action.id}}]" value="3" class="candela-checkbox--primary"/>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+        {{/each}}
+    </div>
+
+    <div class="candela-characterSheet__role">
+        <div>
+            <header>
+                <span class="candela-title">ROLE: <select><option>Slink</option></select></span>
+            </header>
+
+            <div class="candela-selection-list">
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" />
+                    <span>
+                        <strong>Scout:</strong>
+                        If you have time to observe a location, you can spend 1 Intuition to ask a question: <em>What do I notice here that others do not see? What in this place might be of use to us? What path should we follow?</em>
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <header>
+                <span class="candela-title">SPECIALITY: Criminal</span>
+            </header>
+
+            <div class="candela-selection-list">
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" />
+                    <span>
+                        <strong>Street Smarts:</strong>
+                        You know how to keep an eye on your surroundings. Whenever you make a Survey roll, you may spend any drive instead of only using Intuition.
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" />
+                    <span>
+                        <strong>Leverage:</strong>
+                        On a successful Read roll, you may ask the GM what your target truly wants. On any Sway rolls you make using this information, also add a number of dice equal to your current Cunning resistance.
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="candela-checkbox--secondary" disabled />
+                    <span>
+                        <strong>Available in The Full Game</strong>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <header>
+                <span class="candela-title">Illumination Keys</span>
+            </header>
+
+            <ul class="candela-inline-list">
+                <li>Do something illegal</li>
+                <li>Make a Deal</li>
+                <li>Stand Up To Authority</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="candela-characterSheet__marks">
+        <header>
+            <span class="candela-title">MARKS</span>
+        </header>
+
+        <div>
+            <header>
+                <span class="candela-subtitle">SCARS</span>
+            </header>
+        </div>
+
+        <div>
+            <header>
+                <span class="candela-subtitle">RELATIONSHIPS</span>
+            </header>
+        </div>
+
+        <div>
+            <header>
+                <span class="candela-subtitle">GEAR</span>
+            </header>
+        </div>
+
+        <div>
+            <header>
+                <span class="candela-subtitle">NOTES</span>
+            </header>
+        </div>
+    </div>
+</form>

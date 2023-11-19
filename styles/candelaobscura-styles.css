@@ -1,0 +1,287 @@
+@import '../font/Quirkily.css';
+
+:root {
+    --candela--system--spacing--small: 4px;
+    --candela--system--spacing--medium: 8px;
+    --candela--system--spacing--large: 16px;
+    --candela--system--color--primary: #647d78;
+    --candela--system--color--on-primary: white;
+    --candela--system--color--secondary: #cf9217;
+    --candela--system--color--on-secondary: black;
+}
+
+
+/**** Character sheet ****/
+.candela-characterSheet input {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    place-items: center;
+    inset: 0;
+}
+
+.candela-characterSheet .candela-title {
+    font-size: 1.5rem;
+}
+
+.candela-characterSheet .candela-subtitle {
+    font-size: 1.25rem;
+}
+
+.candela-characterSheet input[type="text"] {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    outline: none;
+    background: none;
+    padding-inline: var(--candela--system--spacing--small);
+    line-height: 1.5em;
+    height: 1.5em;
+    text-overflow: ellipsis;
+}
+
+.candela-characterSheet input:is([type="checkbox"], [type="radio"]):not([disabled]),
+.candela-characterSheet label:has(input:is([type="checkbox"], [type="radio"]):not([disabled])) {
+    cursor: pointer;
+}
+
+.candela-characterSheet .candela-checkbox--primary:before {
+    content: '';
+    display: block;
+    aspect-ratio: 1;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 100%;
+    background: var(--candela--checkbox--color);
+}
+
+.candela-characterSheet .candela-checkbox--secondary:before {
+    content: '';
+    display: block;
+    aspect-ratio: 1;
+    width: 8px;
+    border: 1px solid black;
+    transform: rotate(45deg);
+    background: var(--candela--checkbox--color);
+}
+
+.candela-characterSheet .candela-checkbox--primary:checked,
+.candela-characterSheet .candela-checkbox--secondary:checked {
+    --candela--checkbox--color: #aaa;
+}
+
+.candela-characterSheet .candela-selection-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--candela--system--spacing--large) var(--candela--system--spacing--small);
+}
+
+.candela-characterSheet .candela-selection-list label {
+    display: contents;
+}
+
+.candela-characterSheet .candela-selection-list label > input {
+    grid-column: 1;
+    justify-content: center;
+}
+
+.candela-characterSheet .candela-selection-list label > span {
+    grid-column: 2;
+    padding-block-start: 2px;
+}
+
+.candela-characterSheet .candela-inline-list,
+.candela-characterSheet .candela-inline-list > li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.candela-characterSheet .candela-inline-list > li:not(:last-child):after {
+    content: ' |';
+}
+
+.candela-characterSheet {
+    font-family: Quirkily, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "header header header" "actions role marks";
+    gap: var(--candela--system--spacing--large);
+}
+
+.candela-characterSheet .candela-characterSheet__header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: var(--candela--system--spacing--large);
+    border-bottom: 4px double black;
+}
+
+.candela-characterSheet .candela-characterSheet__logo {
+    font-size: 2em;
+    border: none;
+    letter-spacing: 16px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+.candela-characterSheet .candela-characterSheet__actions {
+    grid-area: actions;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    outline: 1px solid black;
+    overflow: hidden;
+    border-radius: 16px 0 0 0;
+}
+
+.candela-characterSheet .candela-characterSheet__role {
+    grid-area: role;
+    display: grid;
+    grid-template-rows: 1fr 2fr auto;
+    row-gap: var(--candela--system--spacing--large);
+    overflow: hidden;
+    padding-block-start: var(--candela--system--spacing--medium);
+}
+
+.candela-characterSheet .candela-characterSheet__marks {
+    grid-area: marks;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: var(--candela--system--spacing--large);
+    outline: 1px solid black;
+    overflow: hidden;
+    border-radius: 0 16px 0 0;
+}
+
+.candela-characterSheet .candela-actionGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.candela-characterSheet .candela-actionGroup__header {
+    background: black;
+    color: white;
+    padding: var(--candela--system--spacing--medium);
+    padding-inline-start: var(--candela--system--spacing--large);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: var(--candela--system--spacing--large);
+}
+
+.candela-characterSheet .candela-actionGroup__title {
+    text-transform: uppercase;
+}
+
+.candela-characterSheet .candela-actionGroup__drives {
+    display: grid;
+    grid-template-columns: repeat(3, 8px) 8px repeat(3, 8px) 8px repeat(3, 8px);
+    grid-template-rows: 24px 8px;
+    gap: var(--candela--system--spacing--small);
+}
+
+.candela-characterSheet .candela-actionGroup__drives span:nth-of-type(1) {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.candela-characterSheet .candela-actionGroup__drives span:nth-of-type(2) {
+    grid-row: 1;
+    grid-column: 8;
+}
+
+.candela-characterSheet .candela-actionGroup__drives span:nth-of-type(3) {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.candela-characterSheet .candela-actionGroup__drives span:nth-of-type(4) {
+    grid-row: 2;
+    grid-column: 8;
+}
+
+.candela-characterSheet .candela-actionGroup__drives input[name^="drive"] {
+    grid-row: 1;
+}
+
+.candela-characterSheet .candela-actionGroup__drives input[name^="maxDrive"] {
+    grid-row: 2;
+}
+
+.candela-characterSheet .candela-actionGroup__drives input[name^="drive"]:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.candela-characterSheet .candela-actionGroup__drives input[name^="maxDrive"]:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.candela-characterSheet .candela-actionGroup__drives input[name^="drive"]:checked:before,
+.candela-characterSheet .candela-actionGroup__drives input[name^="maxDrive"]:checked:before,
+.candela-characterSheet .candela-actionGroup__drives input[name^="drive"]:has(~ input[name^="drive"]:checked):before,
+.candela-characterSheet .candela-actionGroup__drives input[name^="maxDrive"]:has(~ input[name^="maxDrive"]:checked):before {
+    background: #aaa;
+}
+
+.candela-characterSheet .candela-actionGroup__actions {
+    padding: var(--candela--system--spacing--medium);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: var(--candela--system--spacing--large);
+    flex: 1;
+}
+
+.candela-characterSheet .candela-action {
+    display: grid;
+    grid-template-columns: 8px auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "gilded name description" ". rating rating";
+    align-items: center;
+    gap: var(--candela--system--spacing--small) var(--candela--system--spacing--medium);
+}
+
+
+.candela-characterSheet .candela-action__name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+}
+
+.candela-characterSheet .candela-action__description {
+    grid-area: description;
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.candela-characterSheet .candela-action__gilded {
+    grid-area: gilded;
+}
+
+.candela-characterSheet .candela-action__gilded:checked {
+    --candela--checkbox--color: #aaa;
+}
+
+.candela-characterSheet .candela-action__rating {
+    grid-area: rating;
+    display: grid;
+    grid-template-columns: repeat(3, 16px);
+    column-gap: var(--candela--system--spacing--large);
+}
+
+.candela-characterSheet .candela-action__rating input:checked,
+.candela-characterSheet .candela-action__rating input:has(~ input:checked) {
+    --candela--checkbox--color: #aaa;
+}

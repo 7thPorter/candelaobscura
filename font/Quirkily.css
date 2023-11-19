@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Quirkily';
+    font-style: normal;
+    font-weight: 200;
+    font-stretch: 100%;
+    src: url(./Quirkily-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Quirkily';
+    font-style: italic;
+    font-weight: 200;
+    font-stretch: 100%;
+    src: url(./Quirkily-LightItalic.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Quirkily';
+    font-style: normal;
+    font-weight: normal;
+    font-stretch: 100%;
+    src: url(./Quirkily-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Quirkily';
+    font-style: italic;
+    font-weight: normal;
+    font-stretch: 100%;
+    src: url(./Quirkily-Italic.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Quirkily';
+    font-style: normal;
+    font-weight: bold;
+    font-stretch: 100%;
+    src: url(./Quirkily-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Quirkily';
+    font-style: italic;
+    font-weight: bold;
+    font-stretch: 100%;
+    src: url(./Quirkily-BoldItalic.otf) format('opentype');
+}
